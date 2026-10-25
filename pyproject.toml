@@ -1,0 +1,20 @@
+[project]
+name = "email-ocr-api"
+version = "0.6.0"
+description = "API para extraer direcciones de correo desde imagenes usando OCR local con Tesseract"
+requires-python = ">=3.12,<3.14"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q --strict-markers --strict-config"
+pythonpath = ["."]
+filterwarnings = ["error"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+extend-exclude = [".venv", "tesseract"]
+
+[tool.ruff.lint]
+# FastAPI usa File/Form/Depends como valores por defecto en las firmas.
+ignore = ["B008"]
